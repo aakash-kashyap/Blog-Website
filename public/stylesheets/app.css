@@ -1,0 +1,65 @@
+body{
+    font-family: 'Work Sans', sans-serif;
+    background: #1F1C2C;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #928DAB, #1F1C2C);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #928DAB, #1F1C2C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.ui.huge.header {
+    color: #fff;
+    font-weight: 600;
+    font-size: 2.5em;
+}
+
+.ui.attached.segment {
+    border: none;
+    background: lightcyan;
+    border-radius: 0.4rem 0.4rem;
+}
+
+i.icon {
+    font-size: 2em;
+    color: white;
+}
+
+#commentButton{
+    margin-top: 10px;
+}
+
+.container.main{
+    margin: 7.0em auto;
+    width: 70%;
+}
+
+.header{
+     text-align: center;
+}
+
+#delete{
+    display: inline;
+    
+}
+
+.right.icon{
+    font-size: 1.0em;
+}
+
+.content , .description{
+    margin: 2em auto;
+}
+
+
+hr{
+     color: rgba(0,0,0,0.1);
+}
+
+footer{
+    color: rgba(0,0,0,0.5);
+    margin-top: 20px;
+}
+
+#username{
+    text-transform: uppercase;
+}
+
+

@@ -1,0 +1,94 @@
+<% include ./partials/header %>
+    
+    <div class="ui main container segment">
+        <h1 class="ui header"> <%= blog.title %> </h1> 
+        
+        <!--<div class="ui top attached segment">-->
+            <div class= "item"> 
+                <img class =" ui centered rounded image" src="<%= blog.image %>" >    
+            </div>
+            
+            <div class = "content"> 
+                    <div class="meta">
+                            <% if(blog.author.username){ %>
+                            <span> Posted By- <%= blog.author.username.toUpperCase() %></span>
+                            <% }; %>
+                    </div>
+                    <span> <%= blog.created.toDateString() %> </span>        
+            </div>
+        <!--</div>-->
+        <!--<div class="ui top attached segment">-->
+            <div class= "description"> 
+                <p> <%- blog.body %> </p>         
+            </div>
+        <!--</div>-->
+        
+        <!--<div class="ui top attached segment">-->
+        <div>
+            <% if(currentUser) { %>
+                <a class="ui blue labeled icon button"  href="/blogs/<%= blog._id %>/edit"><i class="edit icon"></i>Edit Post</a>    
+                <form id ="delete" action="/blogs/<%= blog._id %>?_method=DELETE" method ="POST">
+                   
+                    <button  class="ui  right floated red labeled icon  button"><i class= "erase icon"></i>Delete Post</button>
+                   
+                </form>            
+            <% }%>
+        </div>
+    <!--</div>        -->
+    
+    
+
+    
+        <div class="ui comments container ">
+         
+           <div class="ui horizontal divider">
+               <h3>Comments</h3>
+          </div>
+         
+         <% blog.comments.forEach(function(comment){ %>
+          
+          <div class="comment">
+            <div class="content">
+                
+                <a class="avatar">
+                    <img src= "<%= blog.image %>">
+                </a>    
+                 <% if(comment.author.username) { %>
+                <a class="author"><%= comment.author.username.toUpperCase() %>   </a>
+                <% }; %>
+                <div class="metadata">
+                <span class="date"><%= comment.created.toDateString() %></span>
+                </div>
+                
+                <div class="text">
+                <%= comment.text %>
+                </div>
+                
+                <!--<div class="actions">-->
+                <!--  <a class="reply">Reply</a>-->
+                <!--</div>-->
+                </div>
+            </div>
+        <% }); %>
+        
+   
+      <form class="ui reply form " action="/blogs/<%= blog._id %>/comments" method="post">
+        <div class=" field">
+            <input type ="text" name="comment[text]" placeholder="write comment here...">
+            <button class="ui blue labeled submit icon  button " id="commentButton">
+                <i class="icon edit"></i> Add Reply
+            </button>
+        </div>
+       
+      </form>
+    
+   </div>
+   
+   
+</div> 
+
+   
+<% include ./partials/footer %>
+
+
+   

@@ -1,0 +1,27 @@
+<% include ./partials/header %>
+<div class="ui main text container">   
+    <div class="ui huge header">Create New Account</div>
+    <form class="ui form" action="/blogs/signup" method = "post">
+      <div class="field">
+        <label>Username</label>
+        <input type="text", name="username", placeholder="username">
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input type="password", name="password", placeholder="password">
+      </div>
+      <button class="ui button" type="submit">Signup</button>
+    </form>
+    
+    <footer>
+        <hr>
+        <h4> Already have an account ?</h4>
+        <a class="ui button small"  href="/blogs/login">Login Here!</a>    
+    </footer>
+    
+    
+</div>
+<% include ./partials/footer %>
+
+
+
